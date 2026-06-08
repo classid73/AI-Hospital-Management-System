@@ -12,6 +12,11 @@ import {
   Tooltip,
 } from "@mui/material";
 import AppIcon_component from "./AppIcon.component";
+import { useAppStore } from "store/slices";
+import type { RoleEnum } from "typescript/enums";
+import { roleAccent, roles } from "data";
+import { useNavigate } from "react-router";
+import { useNotifications } from "hooks";
 export const TopBar_component = ({
   onMenu,
   showMenu,
@@ -19,6 +24,14 @@ export const TopBar_component = ({
   onMenu: () => void;
   showMenu: boolean;
 }) => {
+  const {
+    appState: { role, mode },
+    setRole,
+    toggleMode,
+  } = useAppStore();
+  const accent = roleAccent[role];
+  const { data: notifications = [] } = useNotifications();
+  const Navigate = useNavigate();
   return (
     <AppBar
       position="sticky"
@@ -62,8 +75,8 @@ export const TopBar_component = ({
         <TextField
           select
           label="Role"
-          //   value={role}
-          //   onChange={(event) => setRole(event.target.value as Role)}
+          value={role}
+          onChange={(event) => setRole(event.target.value as RoleEnum)}
           sx={{ minWidth: { xs: 138, sm: 190 } }}
         >
           {roles.map((item) => (
@@ -92,7 +105,7 @@ export const TopBar_component = ({
         <Tooltip title="Notification center">
           <IconButton
             aria-label="Open notifications"
-            onClick={() => navigate("/notifications")}
+            onClick={() => Navigate("/notifications")}
           >
             <Badge color="error" badgeContent={notifications.length}>
               <AppIcon_component
@@ -106,7 +119,7 @@ export const TopBar_component = ({
         <Tooltip title="Profile">
           <IconButton
             aria-label="Open profile"
-            // onClick={() => navigate("/profile")}
+            onClick={() => Navigate("/profile")}
             sx={{ p: 0.5 }}
           >
             <Avatar

@@ -1,4 +1,3 @@
-import type { PaletteMode } from "@mui/material/styles";
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import { useAppDispatch, useAppSelector, type RootState } from "store";
 import { RoleEnum } from "typescript/enums";
@@ -15,13 +14,13 @@ export const appSlice = createSlice({
     setRole: (state: AppStateProps, action: PayloadAction<RoleEnum>) => {
       state.role = action.payload;
     },
-    setMode: (state: AppStateProps, action: PayloadAction<PaletteMode>) => {
-      state.mode = action.payload;
+    toggleMode: (state: AppStateProps) => {
+      state.mode = state.mode === "dark" ? "light" : "dark";
     },
   },
 });
 
-export const { setRole, setMode } = appSlice.actions;
+export const { setRole, toggleMode } = appSlice.actions;
 export const appSelector = (appSiteState: RootState): AppStateProps =>
   appSiteState.app;
 
@@ -30,6 +29,6 @@ export const useAppStore = () => {
   return {
     appState: useAppSelector(appSelector),
     setRole: (role: RoleEnum) => dispatch(setRole(role)),
-    setMode: (mode: PaletteMode) => dispatch(setMode(mode)),
+    toggleMode: () => dispatch(toggleMode()),
   };
 };

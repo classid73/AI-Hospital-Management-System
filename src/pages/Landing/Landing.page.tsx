@@ -1,5 +1,14 @@
+import { TopBar_component } from "components/common";
+import { Outlet } from "react-router";
+
 export const Landing_Page = () => {
-  return <div>Landing_Page</div>;
+  return (
+    <>
+      <TopBar_component onMenu={() => {}} showMenu={false} />
+      Landing_Page
+      <Outlet />
+    </>
+  );
 };
 
 export default Landing_Page;
