@@ -29,7 +29,11 @@ body {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 999px;
-  background: linear-gradient(180deg, rgba(34, 211, 238, 0.72), rgba(139, 92, 246, 0.72));
+  background: linear-gradient(
+    180deg,
+    rgba(34, 211, 238, 0.72),
+    rgba(139, 92, 246, 0.72)
+  );
 }
 
 ::-webkit-scrollbar-track {
@@ -50,7 +54,11 @@ body {
   top: 10%;
   width: 16rem;
   height: 16rem;
-  background: radial-gradient(circle, rgba(34, 211, 238, 0.38), transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(34, 211, 238, 0.38),
+    transparent 70%
+  );
 }
 
 .aurora-orb-two {
@@ -58,7 +66,11 @@ body {
   bottom: 12%;
   width: 22rem;
   height: 22rem;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.36), transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.36),
+    transparent 70%
+  );
 }
 
 @media (prefers-reduced-motion: reduce) {

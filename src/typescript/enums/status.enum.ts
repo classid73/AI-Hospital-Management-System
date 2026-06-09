@@ -1,0 +1,17 @@
+export enum StatusEnum {
+  CRITICAL = "Critical",
+  STABLE = "Stable",
+  OBSERVATION = "Observation",
+  RECOVERY = "Recovery",
+  CONFIRMED = "Confirmed",
+  WAITING = "Waiting",
+  COMPLETED = "Completed",
+  TRIAGE = "Triage",
+  HIGH = "High",
+  MEDIUM = "Medium",
+  LOW = "Low",
+  OPTIMAL = "Optimal",
+  FLAGGED = "Flagged",
+  VERIFIED = "Verified",
+  PROCESSING = "Processing",
+}
