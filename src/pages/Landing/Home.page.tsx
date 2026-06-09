@@ -1,5 +1,5 @@
 import {
-  GlassBox,
+  GlassSurface_Element,
   GradientText_Element,
   PageFrame_Element,
 } from "components/elements";
@@ -7,9 +7,9 @@ import {
 export const Home_Page = () => {
   return (
     <PageFrame_Element>
-      <GlassBox sx={{ px: 8, py: 4 }}>
+      <GlassSurface_Element sx={{ px: 8, py: 4 }}>
         <GradientText_Element>Home Page</GradientText_Element>
-      </GlassBox>
+      </GlassSurface_Element>
     </PageFrame_Element>
   );
 };

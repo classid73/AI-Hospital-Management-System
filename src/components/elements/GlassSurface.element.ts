@@ -1,7 +1,7 @@
 import { alpha, styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 
-export const GlassBox = styled(Box, {
+export const GlassSurface_Element = styled(Box, {
   shouldForwardProp: (prop) => prop !== "interactive",
 })<{ interactive?: boolean }>(({ theme, interactive }) => ({
   position: "relative",
@@ -36,4 +36,4 @@ export const GlassBox = styled(Box, {
       }
     : undefined,
 }));
-export default GlassBox;
+export default GlassSurface_Element;
